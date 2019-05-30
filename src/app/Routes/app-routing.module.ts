@@ -5,6 +5,7 @@ import {MediaInfoComponent} from '../Components/mediainfo.component';
 import {SettingsComponent} from '../Components/settings.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'media-info', component: MediaInfoComponent},
   {path: 'settings', component: SettingsComponent}

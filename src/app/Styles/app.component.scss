@@ -1,16 +1,24 @@
-.left-action-bar {
-  float: left;
-  width: 50px;
-  height: 100%;
-  position: fixed;
-  margin: 0;
+%app-bars {
   backdrop-filter: blur(16px);
   background: transparentize(white, 0.4);
   user-select: none;
+  z-index: 1;
+}
+
+.left-action-bar {
+  @extend %app-bars;
+  float: left;
+  width: 50px;
+  height: 100%;
+  margin: 0;
   transition: all 0.2s ease-in-out;
 
   &.action-bar-extend {
     width: 200px;
+
+    .action-bar-item div span {
+      opacity: 1;
+    }
   }
 
   .action-bar-item {
@@ -23,7 +31,6 @@
       grid-template-columns: 50px auto;
       margin: 9px 0;
       width: 100%;
-      text-align: left;
 
       .material-icons {
         margin-left: 9px;
@@ -31,16 +38,11 @@
       }
 
       span {
-        margin: auto 0;
         overflow: hidden;
         opacity: 0;
         transition: all 0.1s ease-in-out;
         line-height: 32px;
       }
-    }
-
-    &.action-bar-item-extend div span {
-      opacity: 1;
     }
 
     &.current {
@@ -49,4 +51,60 @@
   }
 }
 
+.content-wrapper {
+  padding: 4px;
+  height: 100%;
+  background-color: transparentize(black, 0.6);
+  overflow-y: auto;
+  overflow-x: hidden;
+  backdrop-filter: blur(4px);
 
+  //scroll bars
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(121, 121, 121, 0.4);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(191, 191, 191, 0.4);
+  }
+}
+
+.window-title {
+  top: 0;
+  height: 30px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  user-select: none;
+  z-index: 1;
+
+  .control-button {
+    width: 50px;
+    display: inline-block;
+    float: right;
+    text-align: center;
+    padding: 5px 0;
+
+    * {
+      color: white;
+      font-size: 20px;
+    }
+
+    &.warning * {
+      color: #fd79a8;
+    }
+  }
+
+  .drag-wrapper {
+    -webkit-app-region: drag;
+    width: calc(100% - 150px);
+    height: 100%;
+  }
+}

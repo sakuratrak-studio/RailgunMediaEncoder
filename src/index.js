@@ -20,6 +20,7 @@ function createWindow() {
     width: 1080,
     minWidth: 680,
     height: 840,
+    frame: false,
     title: app.getName(),
     webPreferences: {
       nodeIntegration: true,
@@ -28,13 +29,13 @@ function createWindow() {
   });
 
   mainWindow.loadURL(path.join('file://', __dirname, '/index.html'));
-
 }
 
 function init() {
   singleInstance();
   app.on('ready', () => {
     createWindow();
+    mainWindow.openDevTools();
   });
 
   app.on('window-all-closed', () => {
