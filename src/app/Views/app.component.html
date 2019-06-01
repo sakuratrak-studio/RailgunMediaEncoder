@@ -1,11 +1,11 @@
 <div class="left-action-bar" [ngClass]="{'action-bar-extend':menuExtend}">
-  <div matRipple class="action-bar-item" (click)="menuExtend = !menuExtend">
+  <div matRipple class="action-bar-item ripple-light" (click)="menuExtend = !menuExtend">
     <div>
       <i class="material-icons"> menu </i>
       <span> Hide Menu </span>
     </div>
   </div>
-  <div matRipple class="action-bar-item"
+  <div matRipple class="action-bar-item ripple-light"
        [ngClass]="{'current':router.isActive('/home',false)}"
        (click)="router.navigateByUrl('/home')">
     <div>
@@ -13,7 +13,7 @@
       <span> Home Page </span>
     </div>
   </div>
-  <div matRipple class="action-bar-item"
+  <div matRipple class="action-bar-item ripple-light"
        [ngClass]="{'current':router.isActive('/media-info',false)}"
        (click)="router.navigateByUrl('/media-info')">
     <div>
@@ -21,7 +21,7 @@
       <span> Media Info </span>
     </div>
   </div>
-  <div matRipple class="action-bar-item"
+  <div matRipple class="action-bar-item ripple-light"
        [ngClass]="{'current':router.isActive('/settings',false)}"
        (click)="router.navigateByUrl('/settings')"
   >
@@ -33,13 +33,13 @@
 </div>
 
 <div class="window-title">
-  <div matRipple [matRippleColor]="'rgba(255, 255, 255, 0.6)'" class="control-button warning"
+  <div matRipple class="control-button warning"
        (click)="this.electronService.remote.getCurrentWindow().close()"><i class="material-icons"> close </i></div>
-  <div matRipple [matRippleColor]="'rgba(255, 255, 255, 0.6)'" class="control-button" (click)="toggleMaximize()">
+  <div matRipple class="control-button" (click)="toggleMaximize()">
     <i *ngIf="!electronService.remote.getCurrentWindow().isMaximized()" class="material-icons"> fullscreen </i>
     <i *ngIf="electronService.remote.getCurrentWindow().isMaximized()" class="material-icons"> fullscreen_exit </i>
   </div>
-  <div matRipple [matRippleColor]="'rgba(255, 255, 255, 0.6)'" class="control-button"
+  <div matRipple class="control-button"
        (click)="this.electronService.remote.getCurrentWindow().minimize()"><i class="material-icons"> remove </i></div>
   <div class="drag-wrapper"></div>
 </div>

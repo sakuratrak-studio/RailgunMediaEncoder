@@ -1,3 +1,5 @@
+@import '~@angular/material/theming';
+
 %app-bars {
   backdrop-filter: blur(16px);
   background: transparentize(white, 0.4);

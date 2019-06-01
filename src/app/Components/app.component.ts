@@ -15,6 +15,7 @@ export class AppComponent {
   constructor(public router: Router,
               public electronService: ElectronService
   ) {
+
   }
 
   toggleMaximize() {

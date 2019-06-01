@@ -1,6 +1,12 @@
 /* You can add global Styles to this file, and also import other style files */
 //Material
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/theming";
+
+//
+// Theme
+//
+
 
 body {
   background: no-repeat center/cover url("../../assets/imgs/background.png");
@@ -8,4 +14,11 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
+}
+
+.ripple-light {
+  $candy-app-primary: mat-palette($mat-indigo);
+  $candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
+  $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
+  @include mat-ripple-theme($candy-app-theme);
 }
