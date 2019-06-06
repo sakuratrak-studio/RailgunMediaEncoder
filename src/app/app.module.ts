@@ -9,6 +9,8 @@ import {HomeComponent} from './Components/home.component';
 import {MediaInfoComponent} from './Components/mediainfo.component';
 import {SettingsComponent} from './Components/settings.component';
 import {NgxElectronModule} from 'ngx-electron';
+import {TasksComponent} from './Components/tasks.component';
+import {TaskdetailComponent} from './Components/taskdetail.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import {NgxElectronModule} from 'ngx-electron';
     HomeComponent,
     MediaInfoComponent,
     SettingsComponent,
+    TasksComponent,
+    TaskdetailComponent
   ],
   imports: [
     BrowserAnimationsModule,

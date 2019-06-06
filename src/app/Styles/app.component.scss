@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@import '../../../node_modules/@angular/material/theming';
 
 %app-bars {
   backdrop-filter: blur(16px);
@@ -9,6 +9,7 @@
 
 .left-action-bar {
   @extend %app-bars;
+  color: black;
   float: left;
   width: 50px;
   height: 100%;

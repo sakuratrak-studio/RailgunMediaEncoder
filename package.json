@@ -1,13 +1,23 @@
 {
   "name": "railgun-media-encoder",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "EdgeNeko - Sakura Trak Studio",
+  "homepage": "https://sakuratrak.tk/railgun",
   "scripts": {
     "build": "ng build",
     "start": "ng serve --open",
-    "electron": "ng build --base-href ./ && electron ./dist/RailgunMediaEncoder/index.js",
-    "e": "npm run electron"
+    "electron": "ng build --base-href ./ && electron ./dist/angular/index.js",
+    "e": "npm run electron",
+    "prod": "ng build --base-href ./ --prod --output-hashing none"
   },
   "private": true,
+  "build": {
+    "appId": "net.sakuratrak.RailgunMediaEncoder",
+    "productName": "Railgun Media Encoder",
+    "directories": {
+      "app": "dist/webpack"
+    }
+  },
   "dependencies": {
     "@angular/animations": "^8.0.0",
     "@angular/cdk": "^8.0.0",
@@ -35,9 +45,11 @@
     "@types/jasmine": "~3.3.13",
     "@types/jasminewd2": "~2.0.6",
     "@types/node": "~12.0.3",
+    "asar": "^2.0.1",
     "codelyzer": "~5.0.1",
     "concurrently": "^4.1.0",
     "electron": "5.0.1",
+    "electron-builder": "^20.41.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
