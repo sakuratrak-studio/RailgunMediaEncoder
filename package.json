@@ -4,11 +4,10 @@
   "author": "EdgeNeko - Sakura Trak Studio",
   "homepage": "https://sakuratrak.tk/railgun",
   "scripts": {
-    "build": "ng build",
-    "start": "ng serve --open",
-    "electron": "ng build --base-href ./ && electron ./dist/angular/index.js",
-    "e": "npm run electron",
-    "prod": "ng build --base-href ./ --prod --output-hashing none"
+    "build": "tsc -p core && ng build --base-href ./",
+    "build-prod": "tsc -p core && ng build --prod --base-href ./",
+    "start": "npm run build && electron ./dist/index.js",
+    "clean": "rm ./dist -rvf"
   },
   "private": true,
   "build": {
