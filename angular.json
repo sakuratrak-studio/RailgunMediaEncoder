@@ -28,7 +28,7 @@
               "src/index.js"
             ],
             "styles": [
-              "../node_modules/material-design-icons/iconfont/material-icons.css",
+              "node_modules/material-design-icons/iconfont/material-icons.css",
               "src/app/Styles/global.scss"
             ],
             "scripts": [],
