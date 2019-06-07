@@ -1,5 +1,7 @@
 # RailgunMediaEncoder
 
+[中文文档](doc/readme_zh.md)
+
 RailgunMediaEncoder is a cross-platform Media Encoder GUI built with Angular and Electron.
 
 ## <del>Releases</del>
