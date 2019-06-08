@@ -4,6 +4,8 @@
 
 [中文文档](doc/readme_zh.md)
 
+[![Azure DevOps builds](https://img.shields.io/azure-devops/build/sakuratrak/9de96728-a083-4b00-9853-dda6cd7d8f3c/3.svg?logo=azure-devops&style=flat-square)](https://sakuratrak.visualstudio.com/RailgunMediaEncoder/_build?definitionId=3)
+
 Railgun Media Encoder is a cross-platform Media Encoder GUI built with Angular and Electron.
 
 ## <del>Releases</del>
