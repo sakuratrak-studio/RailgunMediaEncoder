@@ -5,16 +5,53 @@
   "homepage": "https://sakuratrak.tk/railgun",
   "scripts": {
     "build": "tsc -p core && ng build --base-href ./",
-    "build-prod": "tsc -p core && ng build --prod --base-href ./",
-    "start": "npm run build && electron ./dist/index.js",
-    "clean": "rm ./dist -rvf"
+    "build-prod": "tsc -p core && ng build --prod --base-href ./ --output-hashing none",
+    "start": "npm run build && electron ./dist/app/index.js",
+    "clean": "rm ./dist -rf",
+    "publish": "cp package.release.json dist/app/package.json && electron-builder",
+    "lint": "ng lint --type-check && tsc -p ui && echo Linting Core... && tslint -p core"
   },
   "private": true,
   "build": {
     "appId": "net.sakuratrak.RailgunMediaEncoder",
     "productName": "Railgun Media Encoder",
     "directories": {
-      "app": "dist/webpack"
+      "app": "dist/app",
+      "output": "dist/pack",
+      "buildResources": "res"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "license": "LICENSE",
+      "artifactName": "${productName}.Setup.${version}.${ext}"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        },
+        {
+          "target": "zip"
+        }
+      ]
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "deb"
+        },
+        {
+          "target": "rpm"
+        },
+        {
+          "target": "tar.gz"
+        }
+      ]
     }
   },
   "dependencies": {
@@ -32,23 +69,24 @@
     "material-design-icons": "^3.0.1",
     "ngx-electron": "^2.1.1",
     "rxjs": "~6.5.2",
+    "sweetalert2": "^8.11.7",
     "tslib": "^1.9.3",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.800.0",
-    "@angular/cli": "~8.0.0",
+    "@angular-devkit/build-angular": "~0.800.2",
+    "@angular/cli": "~8.0.2",
     "@angular/compiler-cli": "~8.0.0",
     "@angular/language-service": "~8.0.0",
     "@types/electron": "^1.6.10",
     "@types/jasmine": "~3.3.13",
     "@types/jasminewd2": "~2.0.6",
-    "@types/node": "~12.0.3",
+    "@types/node": "~12.0.7",
     "asar": "^2.0.1",
-    "codelyzer": "~5.0.1",
+    "codelyzer": "~5.1.0",
     "concurrently": "^4.1.0",
     "electron": "5.0.1",
-    "electron-builder": "^20.41.0",
+    "electron-builder": "^20.43.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -58,7 +96,7 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.2",
     "ts-node": "~8.2.0",
-    "tslint": "~5.16.0",
+    "tslint": "~5.17.0",
     "typescript": "~3.4.5"
   }
 }
