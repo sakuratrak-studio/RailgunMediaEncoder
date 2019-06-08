@@ -4,6 +4,8 @@
 
 [English](../README.md)
 
+[![Azure DevOps builds](https://img.shields.io/azure-devops/build/sakuratrak/9de96728-a083-4b00-9853-dda6cd7d8f3c/3.svg?logo=azure-devops&style=flat-square)](https://sakuratrak.visualstudio.com/RailgunMediaEncoder/_build?definitionId=3)
+
 > 你指尖跃动的电光,是我此生永恒不变的信仰
 
 Railgun Media Encoder 是一个跨平台的视频编码工具,提供视频编码、压制、抽取等多个功能。 使用Angular和Electron构建。
