@@ -10,7 +10,7 @@ body {
   color: white;
   background: no-repeat center/cover url("../../res/imgs/background.png");
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
   height: 100vh;
   overflow: hidden;
 }

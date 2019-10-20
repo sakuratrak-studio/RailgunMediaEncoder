@@ -11,6 +11,8 @@ import {SettingsComponent} from './Components/settings.component';
 import {NgxElectronModule} from 'ngx-electron';
 import {TasksComponent} from './Components/tasks.component';
 import {TaskdetailComponent} from './Components/taskdetail.component';
+import {NodeService} from './Services/NodeService';
+import {MediaInfoService} from './Services/MediaInfoService';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,10 @@ import {TaskdetailComponent} from './Components/taskdetail.component';
     NgxElectronModule,
     MatTabsModule,
   ],
-  providers: [],
+  providers: [
+    NodeService,
+    MediaInfoService
+  ],
   bootstrap: [
     AppComponent,
   ]

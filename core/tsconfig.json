@@ -9,7 +9,8 @@
       "node_modules/@types"
     ],
     "moduleResolution": "node",
-    "sourceRoot": "src"
+    "sourceRoot": ".",
+    "experimentalDecorators": true
   },
   "exclude": [
     "node_modules"
