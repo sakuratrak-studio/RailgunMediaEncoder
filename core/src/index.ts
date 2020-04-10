@@ -3,7 +3,7 @@ import * as path from 'path';
 import {app, BrowserWindow} from 'electron';
 
 
-let mainWindow = null;
+let mainWindow: BrowserWindow = null;
 
 function singleInstance() {
   app.requestSingleInstanceLock();
@@ -32,13 +32,19 @@ function createWindow() {
   });
 
   mainWindow.loadURL(path.join('file://', __dirname, 'ui/index.html'));
+  mainWindow.webContents.on('will-navigate', (event, url) => {
+    if (url !== path.join('file://', __dirname, 'ui/index.html')) {
+      event.preventDefault();
+      mainWindow.loadURL(path.join('file://', __dirname, 'ui/index.html'));
+    }
+  });
 }
 
 function init() {
   singleInstance();
   app.on('ready', () => {
     createWindow();
-    mainWindow.openDevTools();
+    mainWindow.webContents.openDevTools();
   });
 
   app.on('window-all-closed', () => {

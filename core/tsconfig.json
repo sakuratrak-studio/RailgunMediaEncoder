@@ -6,13 +6,9 @@
     "sourceMap": true,
     "outDir": "../dist/app",
     "typeRoots": [
-      "node_modules/@types"
+      "../node_modules/@types"
     ],
     "moduleResolution": "node",
-    "sourceRoot": ".",
     "experimentalDecorators": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }
