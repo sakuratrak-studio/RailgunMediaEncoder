@@ -1,7 +1,7 @@
 // Entry point of Electron
 import * as path from 'path';
 import {app, BrowserWindow} from 'electron';
-
+import * as remote from '@electron/remote/main';
 
 let mainWindow: BrowserWindow = null;
 
@@ -27,7 +27,9 @@ function createWindow() {
     title: app.getName(),
     webPreferences: {
       nodeIntegration: true,
-      experimentalFeatures: true
+      experimentalFeatures: true,
+      enableRemoteModule: true,
+      contextIsolation: false // Todo remove contextIsolation to prevent possible injection
     }
   });
 
@@ -42,6 +44,7 @@ function createWindow() {
 
 function init() {
   singleInstance();
+  remote.initialize();
   app.on('ready', () => {
     createWindow();
     mainWindow.webContents.openDevTools();

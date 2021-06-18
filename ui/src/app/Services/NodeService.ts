@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import fs from 'fs';
 import childProcess from 'child_process';
-import {ElectronService} from 'ngx-electron';
+import {ElectronService} from './ElectronService';
 
 @Injectable({
   providedIn: 'root'

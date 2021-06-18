@@ -10,7 +10,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HomeComponent} from './Components/home.component';
 import {MediaInfoComponent} from './Components/mediainfo.component';
 import {SettingsComponent} from './Components/settings.component';
-import {NgxElectronModule} from 'ngx-electron';
 import {TasksComponent} from './Components/tasks.component';
 import {TaskdetailComponent} from './Components/taskdetail.component';
 import {NodeService} from './Services/NodeService';
@@ -31,7 +30,6 @@ import {MediaInfoService} from './Services/MediaInfoService';
     AppRoutingModule,
     MatRippleModule,
     MatButtonModule,
-    NgxElectronModule,
     MatTabsModule,
   ],
   providers: [

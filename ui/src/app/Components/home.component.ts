@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ElectronService} from 'ngx-electron';
 import {NodeService} from '../Services/NodeService';
+import {ElectronService} from '../Services/ElectronService';
 
 @Component({
   templateUrl: '../Views/home.component.html',

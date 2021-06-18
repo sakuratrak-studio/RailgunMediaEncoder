@@ -31,8 +31,7 @@
               "node_modules/material-design-icons/iconfont/material-icons.css",
               "ui/src/app/Styles/global.scss"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
