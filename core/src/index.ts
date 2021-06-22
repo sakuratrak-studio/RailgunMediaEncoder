@@ -34,8 +34,8 @@ function createWindow() {
   });
 
   mainWindow.loadURL(path.join('file://', __dirname, 'ui/index.html'));
-  mainWindow.webContents.on('will-navigate', (event, url) => {
-    if (url !== path.join('file://', __dirname, 'ui/index.html')) {
+  mainWindow.webContents.on('did-fail-provisional-load', (event, errCode, _, url) => {
+    if (errCode === -6 && url !== path.join('file://', __dirname, 'ui/index.html')) {
       event.preventDefault();
       mainWindow.loadURL(path.join('file://', __dirname, 'ui/index.html'));
     }

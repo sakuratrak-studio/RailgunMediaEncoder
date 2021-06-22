@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NodeService} from '../Services/NodeService';
 import {ElectronService} from '../Services/ElectronService';
+import Swal from 'sweetalert2';
 
 @Component({
   templateUrl: '../Views/home.component.html',
@@ -14,5 +15,6 @@ export class HomeComponent implements OnInit {
   }
 
   public test() {
+    Swal.fire('Test message');
   }
 }

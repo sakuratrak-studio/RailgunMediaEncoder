@@ -4,9 +4,10 @@
   "author": "EdgeNeko - Sakura Trak Studio",
   "homepage": "https://sakuratrak.tk/railgun",
   "scripts": {
-    "build": "tsc -p core && ng build --base-href ./",
-    "build-prod": "tsc -p core && ng build --prod --base-href ./ --output-hashing none",
-    "start": "yarn run build && electron ./dist/app/index.js",
+    "build": "tsc -p core && ng build",
+    "build-watch": "tsc -p core && ng build --watch",
+    "build-prod": "tsc -p core && ng build --prod --output-hashing none",
+    "start": "electron ./dist/app/index.js --enable-logging",
     "clean": "rm ./dist -rf",
     "publish": "cp package.release.json dist/app/package.json && electron-builder",
     "lint": "ng lint --type-check && tsc -p ui && echo Linting Core... && tslint -p core"
@@ -66,6 +67,7 @@
     "@angular/platform-browser-dynamic": "~12.0.5",
     "@angular/router": "~12.0.5",
     "@electron/remote": "^1.2.0",
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "core-js": "^3.14.0",
     "material-design-icons": "^3.0.1",
     "rxjs": "~7.1.0",

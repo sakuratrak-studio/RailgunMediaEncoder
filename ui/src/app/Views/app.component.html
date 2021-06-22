@@ -22,6 +22,14 @@
     </div>
   </div>
   <div matRipple class="action-bar-item ripple-light"
+       [ngClass]="{'current':router.isActive('/media-info',false)}"
+       (click)="router.navigateByUrl('/media-info')">
+    <div>
+      <i class="material-icons-outlined">receipt_long</i>
+      <span> Tasks </span>
+    </div>
+  </div>
+  <div matRipple class="action-bar-item ripple-light"
        [ngClass]="{'current':router.isActive('/settings',false)}"
        (click)="router.navigateByUrl('/settings')">
     <div>
@@ -33,13 +41,13 @@
 
 <div class="window-title">
   <div matRipple class="control-button warning"
-       (click)="this.electronService.remote.getCurrentWindow().close()"><i class="material-icons"> close </i></div>
+       (click)="this.electronService.remote.getCurrentWindow().close()"><i class="fas fa-times"></i></div>
   <div matRipple class="control-button" (click)="toggleMaximize()">
-    <i *ngIf="!electronService.remote.getCurrentWindow().isMaximized()" class="material-icons"> fullscreen </i>
-    <i *ngIf="electronService.remote.getCurrentWindow().isMaximized()" class="material-icons"> fullscreen_exit </i>
+    <i *ngIf="!electronService.remote.getCurrentWindow().isMaximized()" class="far fa-window-maximize"></i>
+    <i *ngIf="electronService.remote.getCurrentWindow().isMaximized()" class="far fa-window-restore"></i>
   </div>
   <div matRipple class="control-button"
-       (click)="this.electronService.remote.getCurrentWindow().minimize()"><i class="material-icons"> remove </i></div>
+       (click)="this.electronService.remote.getCurrentWindow().minimize()"><i class="fas fa-window-minimize"></i></div>
   <div class="drag-wrapper"></div>
 </div>
 <div class="content-wrapper">
